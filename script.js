@@ -1,1 +1,0 @@
-consol.log("Coding can be difficult")
