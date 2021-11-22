@@ -32,7 +32,8 @@ let map = L.map('mapid', {
 // Create a base layer that holds all three maps.
 let baseMaps = {
   "Streets": streets,
-  "Satellite": satelliteStreets
+  "Satellite": satelliteStreets,
+  "Dark": dark
 };
 
 // 1. Add a 3rd layer group for the major earthquake data.
@@ -46,7 +47,7 @@ let majorEarthquakes = new L.LayerGroup();
 let overlays = {
   "Earthquakes": allEarthquakes,
   "Tectonic Plates": tectonicPlates,
-  "Major Earthquakes in last 7 Days": majorEarthquakes
+  "Major Earthquakes": majorEarthquakes
 
 };
 
@@ -222,5 +223,3 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   // Add the tectonic layer group to the map.
   tectonicPlates.addTo(map);
 });
-
-
