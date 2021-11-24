@@ -122,20 +122,20 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   allEarthquakes.addTo(map);
 
   // 3. Retrieve the major earthquake GeoJSON data >4.5 mag for the week.
-  d3.json().then(function (data) {
+ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson").then(function(data) {
 
-    // 4. Use the same style as the earthquake data.
-    function styleInfo(feature) {
-      return {
-        opacity: 1,
-        fillOpacity: 1,
-        fillColor: getColor(feature.properties.mag),
-        color: "#000000",
-        radius: getRadius(feature.properties.mag),
-        stroke: true,
-        weight: 0.5
-      };
-    }
+// 4. Use the same style as the earthquake data.
+function styleInfo(feature) {
+  return {
+    opacity: 1,
+    fillOpacity: 1,
+    fillColor: getColor(feature.properties.mag),
+    color: "#000000",
+    radius: getRadius(feature.properties.mag),
+    stroke: true,
+    weight: 0.5
+  };
+}
 
     // 5. Change the color function to use three colors for the major earthquakes based on the magnitude of the earthquake.
 
